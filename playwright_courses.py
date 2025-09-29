@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import expect, sync_playwright
 
 
 with sync_playwright() as playwright:
@@ -30,6 +30,18 @@ with sync_playwright() as playwright:
     context = browser.new_context(storage_state='browser-state.json')
     page = context.new_page()
 
-    page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
+    page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
+
+    course_title = page.get_by_test_id('courses-list-toolbar-title-text')
+    expect(course_title).to_have_text('Courses')
+
+    empty_icon = page.get_by_test_id('courses-list-empty-view-icon')
+    expect(empty_icon).to_be_visible()
+
+    no_results_block = page.get_by_test_id('courses-list-empty-view-title-text')
+    expect(no_results_block).to_have_text('There is no results')
+
+    description_block = page.get_by_test_id('courses-list-empty-view-description-text')
+    expect(description_block).to_have_text('Results from the load test pipeline will be displayed here')
 
     page.wait_for_timeout(2000)
