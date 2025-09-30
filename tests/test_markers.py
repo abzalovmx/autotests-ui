@@ -20,6 +20,7 @@ class TestSuite:
     def test_case2(self):
         pass
 
+
 @pytest.mark.regression
 class TestUserAuthentication:
 

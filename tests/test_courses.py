@@ -1,6 +1,9 @@
 from playwright.sync_api import expect, sync_playwright
+import pytest
 
 
+@pytest.mark.courses
+@pytest.mark.regression
 def test_empty_courses_list():
 
     with sync_playwright() as playwright:
