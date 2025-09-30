@@ -24,7 +24,6 @@ def test_empty_courses_list():
 
         context.storage_state(path='browser-state.json')
 
-
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
         context = browser.new_context(storage_state='browser-state.json')
