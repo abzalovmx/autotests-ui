@@ -4,7 +4,7 @@ import pytest
 
 @pytest.mark.regression
 @pytest.mark.authorization
-def test_wrong_email_or_password(chromium_page: Page):
+def test_wrong_email_or_password_authorization(chromium_page: Page):
 
     chromium_page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
 
