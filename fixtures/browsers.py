@@ -43,3 +43,5 @@ def chromium_page(playwright: Playwright) -> Page:
     context = browser.new_context()
     page = context.new_page()
     yield page
+    context.close()
+    browser.close()
