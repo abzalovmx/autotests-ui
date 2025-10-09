@@ -11,11 +11,15 @@ class RegistrationPage(BasePage):
         self.password_input = page.get_by_test_id('registration-form-password-input').locator('input')
         self.registration_button = page.get_by_test_id('registration-page-registration-button')
         self.dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
+        self.login_link = page.get_by_test_id('registration-page-login-link')
 
-    def fill_registration_form_inputs(self, email: str, username: str, password: str):
+    def fill_registration_form(self, email: str, username: str, password: str):
         self.email_input.fill(email)
         self.username_input.fill(username)
         self.password_input.fill(password)
 
     def click_registration_button(self):
         self.registration_button.click()
+
+    def click_login_link(self):
+        self.login_link.click()
