@@ -9,7 +9,7 @@ class SidebarComponent(BaseComponent):
         super().__init__(page)
 
         self.logout_list_item = SidebarListItemComponent(page, 'logout')
-        self.course_list_item = SidebarListItemComponent(page, 'course')
+        self.course_list_item = SidebarListItemComponent(page, 'courses')
         self.dashboard_list_item = SidebarListItemComponent(page, 'dashboard')
 
     def check_visible(self):
