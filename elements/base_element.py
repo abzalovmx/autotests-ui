@@ -11,7 +11,7 @@ class BaseElement:
         locator = self.locator.format(**kwargs)
         return self.page.get_by_test_id(locator)
 
-    def click_locator(self, **kwargs):
+    def click(self, **kwargs):
         locator = self.get_locator(**kwargs)
         locator.click()
 
