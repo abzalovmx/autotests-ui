@@ -58,5 +58,4 @@ class Settings(BaseSettings):
         return f"{self.app_url}/"
 
 
-# Инициализируем настройки
 settings = Settings.initialize()
