@@ -1,6 +1,7 @@
 # config.py
 from enum import Enum
 from typing import Self
+
 from pydantic import EmailStr, FilePath, HttpUrl, DirectoryPath, BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -23,9 +24,9 @@ class TestData(BaseModel):
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",  # Указываем, из какого файла читать настройки
-        env_file_encoding="utf-8",  # Указываем кодировку файла
-        env_nested_delimiter=".",  # Указываем разделитель для вложенных переменных
+        env_file=".env",
+        env_file_encoding="utf-8",
+        env_nested_delimiter=".",
     )
 
     app_url: HttpUrl
@@ -47,9 +48,15 @@ class Settings(BaseSettings):
         tracing_dir.mkdir(exist_ok=True)
         browser_state_file.touch(exist_ok=True)
 
-        return Settings(videos_dir=videos_dir, tracing_dir=tracing_dir, browser_state_file=browser_state_file)
+        return Settings(
+            videos_dir=videos_dir,
+            tracing_dir=tracing_dir,
+            browser_state_file=browser_state_file
+        )
 
     def get_base_url(self) -> str:
         return f"{self.app_url}/"
 
+
+# Инициализируем настройки
 settings = Settings.initialize()

@@ -1,5 +1,6 @@
 import allure
 from playwright.sync_api import Playwright, Page
+
 from config import settings
 
 
@@ -22,5 +23,5 @@ def initialize_playwright_page(
     context.tracing.stop(path=settings.tracing_dir.joinpath(f'{test_name}.zip'))
     browser.close()
 
-    allure.attach.file(source=settings.tracing_dir.joinpath(f'{test_name}.zip'), name='trace', extension='zip')
+    allure.attach.file(settings.tracing_dir.joinpath(f'{test_name}.zip'), name='trace', extension='zip')
     allure.attach.file(page.video.path(), name='video', attachment_type=allure.attachment_type.WEBM)
