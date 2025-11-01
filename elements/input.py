@@ -2,7 +2,7 @@ from elements.base_element import BaseElement
 from playwright.sync_api import expect, Locator
 import allure
 from tools.logger import get_logger
-from ui_coverage_tool import ActionType, SelectorType
+from ui_coverage_tool import ActionType
 
 
 logger = get_logger("INPUT")
