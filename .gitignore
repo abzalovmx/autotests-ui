@@ -4,6 +4,7 @@
 # python
 venv
 __pycache__
+.flake8
 
 # allure
 allure-results
