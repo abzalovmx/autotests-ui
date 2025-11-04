@@ -17,6 +17,8 @@ videos
 tracing
 playwright_basic
 pytest
+prompts
+for_api_tests
 
 # coverage
 coverage.html
