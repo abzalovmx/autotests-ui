@@ -8,12 +8,15 @@ __pycache__
 # allure
 allure-results
 allure-report
+.ai-review.yaml
 
 # testing artifacts
 *.html
 *.json
 videos
 tracing
+playwright_basic
+pytest
 
 # coverage
 coverage.html
