@@ -24,3 +24,4 @@ for_api_tests
 # coverage
 coverage.html
 coverage-results
+browser-state.json
