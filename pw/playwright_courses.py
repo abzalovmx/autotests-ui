@@ -42,7 +42,7 @@ with sync_playwright() as p1:
 
     empty_view_description = page.get_by_test_id('courses-list-empty-view-description-text')
     expect(empty_view_description).to_be_visible()
-    expect(empty_view_description).to_have_text('Results from the load test piapeline will be displayed here')
+    expect(empty_view_description).to_have_text('Results from the load test pipeline will be displayed here')
 
 
 
