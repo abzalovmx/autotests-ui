@@ -15,7 +15,7 @@ def calculate_pinfl_check_digit(pinfl13):
 
 
 # Пример
-pinfl13 = "5150900456545"
+pinfl13 = "3200689027074"
 check_digit = calculate_pinfl_check_digit(pinfl13)
 
 print(f"Контрольная цифра: {check_digit}")
