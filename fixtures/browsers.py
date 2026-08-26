@@ -1,5 +1,5 @@
 import pytest
-from playwright.sync_api import sync_playwright, Page, Playwright
+from playwright.sync_api import Page, Playwright
 
 
 # Фикстура без использования pytest-playwright встроенной фикстуры
@@ -41,6 +41,7 @@ def initialize_browser_state(playwright: Playwright):
     registration_button.click()
 
     context.storage_state(path='browser-state.json')
+    browser.close()
 
 
 @pytest.fixture(scope="function")
