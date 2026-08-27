@@ -1,10 +1,12 @@
-from components.base_component import BaseComponent
-from playwright.sync_api import Page, expect
 import re
 
+from playwright.sync_api import Page, expect
 
-class CoursesListToolbarComponent(BaseComponent):
-    def __init__(self,page: Page):
+from components.base_component import BaseComponent
+
+
+class CoursesListToolbarViewComponent(BaseComponent):
+    def __init__(self, page: Page):
         super().__init__(page)
 
         self.title = page.get_by_test_id('courses-list-toolbar-title-text')
@@ -18,5 +20,4 @@ class CoursesListToolbarComponent(BaseComponent):
 
     def click_create_course_button(self):
         self.create_course_button.click()
-        self.check_current_url(re.compile(".*/#/courses/create"))
-
+        self.check_current_url(re.compile(r'.*/#/courses/create'))
