@@ -6,3 +6,4 @@ class AllureStory(str, Enum):
     DASHBOARD = "Dashboard"
     AUTHENTICATION = "Authentication"
     REGISTRATION = "Registration"
+    AUTHORIZATION = "Authorization"
