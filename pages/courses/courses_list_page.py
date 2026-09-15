@@ -17,3 +17,9 @@ class CoursesListPage(BasePage):
         self.course_view = CourseViewComponent(page)
         self.courses_list_toolbar_view = CoursesListToolbarViewComponent(page)
         self.courses_list_empty_view = EmptyViewComponent(page, identifier='courses-list')
+
+    def check_visible_empty_view(self):
+        self.courses_list_empty_view.check_visible(
+            title='There is no results',
+            description='Results from the load test pipeline will be displayed here'
+        )
