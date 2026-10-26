@@ -14,9 +14,3 @@ def get_logger(name: str) -> logging.Logger:
     logger.addHandler(handler)
 
     return logger
-
-
-logger = get_logger("PAGE")
-
-logger.info("Hello world")
-logger.warning("Hello universe")
